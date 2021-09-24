@@ -1,0 +1,20 @@
+module.exports={
+  devServer:{
+    open:true,
+    host:"localhost",
+    port:8080,
+    https:false,
+    hotOnly:false,
+    proxy:{
+      "/api":{
+        target:"https://c.iwanmen.com/element/api",
+        ws:true,
+        changeOrigin:true,
+        pathRewrite:{
+          "^/api":""
+        }
+      }
+    },
+  },
+  lintOnSave: false
+}
